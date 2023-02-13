@@ -3,20 +3,25 @@ import { Box, Stack, Typography } from "@mui/material"
 import Sidebar from "../Sidebar"
 import Videos from "../Videos"
 import youtubeApi from "@/apis/youtube"
+import { IVideos } from "@/types"
 
 const Homepage = () => {
-  const [videos, setVideos] = useState(null)
+  const [videos, setVideos] = useState<IVideos[]>([])
 
   useEffect(() => {
-    setVideos(null)
+    setVideos([])
 
-    const response = youtubeApi
+    youtubeApi
       .get("/search", {
         params: {
-          q: "test"
+          part: "snippet",
+          q: ""
         }
       })
-      .then(data => console.log(data))
+      .then(response => {
+        setVideos(response.data.items)
+        console.log(response.data)
+      })
   }, [])
 
   return (
@@ -31,18 +36,9 @@ const Homepage = () => {
         <Sidebar />
       </Box>
 
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={2}
-          sx={{ color: "white" }}
-        >
-          Homepage
-        </Typography>
+      <Box p={2} sx={{ overflowY: "auto", height: "90vh" }}>
+        <Videos videos={videos} />
       </Box>
-
-      <Videos />
     </Stack>
   )
 }

@@ -7,7 +7,12 @@ import {
   YouTube,
   Schedule,
   ThumbUpOutlined,
-  KeyboardArrowDown
+  KeyboardArrowDown,
+  Whatshot,
+  MusicNote,
+  SportsEsports,
+  Newspaper,
+  EmojiEvents
 } from "@mui/icons-material"
 
 export const sidebarItemsHeader = [
@@ -23,4 +28,12 @@ export const sidebarItemsBody = [
   { icon: <Schedule />, title: "Watch later" },
   { icon: <ThumbUpOutlined />, title: "Liked videos" },
   { icon: <KeyboardArrowDown />, title: "Show more" }
+]
+
+export const sidebarItemsExplore = [
+  { icon: <Whatshot />, title: "Trending" },
+  { icon: <MusicNote />, title: "Music" },
+  { icon: <SportsEsports />, title: "Gaming" },
+  { icon: <Newspaper />, title: "News" },
+  { icon: <EmojiEvents />, title: "Sports" }
 ]
