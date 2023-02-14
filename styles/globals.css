@@ -105,6 +105,19 @@ input {
   scrollbar-width: none; /* Firefox */
 }
 
+.MuiTab-root {
+  color: gray;
+}
+
+.MuiTab-root.Mui-selected {
+  color: whitesmoke;
+}
+
+.MuiTabs-indicator {
+  color: whitesmoke;
+  background: whitesmoke;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

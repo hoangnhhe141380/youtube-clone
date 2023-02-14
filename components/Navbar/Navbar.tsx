@@ -1,7 +1,8 @@
-import { Button, IconButton, Stack, Typography } from "@mui/material"
+import { Box, Button, IconButton, Stack, Typography } from "@mui/material"
 import YouTubeIcon from "@mui/icons-material/YouTube"
 import Link from "next/link"
 import Searchbar from "./Searchbar"
+import { Menu } from "@mui/icons-material"
 
 const Navbar = () => {
   return (
@@ -16,15 +17,20 @@ const Navbar = () => {
         gap: "30%"
       }}
     >
-      <Link href={"/"} style={{ display: "flex", alignItems: "center" }}>
-        <Button
-          variant="text"
-          startIcon={<YouTubeIcon fontSize="large" color="error" />}
-          sx={{ color: "white", fontWeight: "bold", fontSize: "1rem" }}
-        >
-          Clone
-        </Button>
-      </Link>
+      <Box sx={{ display: "flex", flexDirection: "row" }}>
+        <IconButton sx={{ color: "whitesmoke" }}>
+          <Menu />
+        </IconButton>
+        <Link href={"/"} style={{ display: "flex", alignItems: "center" }}>
+          <Button
+            variant="text"
+            startIcon={<YouTubeIcon fontSize="large" color="error" />}
+            sx={{ color: "white", fontWeight: "bold", fontSize: "1rem" }}
+          >
+            Clone
+          </Button>
+        </Link>
+      </Box>
       <Searchbar />
     </Stack>
   )

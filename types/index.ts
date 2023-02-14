@@ -1,106 +1,106 @@
 export interface IVideos {
-  etag: string
-  id: {
-    kind: string
-    videoId: string
-  }
-  kind: string
-  snippet: {
-    channelId: string
-    channelTitle: string
-    desciption: string
-    liveBroadcastContent: string
-    publishTime: string
-    publishedAt: string
-    thumbnails: {
-      default: {
+  type: string
+  video: {
+    author: {
+      avatar: {
         height: number
         width: number
         url: string
-      }
-      high: {
-        height: number
-        width: number
-        url: string
-      }
-      medium: {
-        height: number
-        width: number
-        url: string
-      }
+      }[]
+      badge: unknown[]
+      canonicalBaseUrl: string
+      channelId: string
+      title: string
     }
+    badge: unknown[]
+    descriptionSnippet: unknown
+    isLiveNow: boolean
+    lengthSeconds: number
+    movingThumbnails: unknown
+    publishedTimeText: string
+    stats: {
+      views: number
+    }
+    thumbnails: any[]
     title: string
+    videoId: string
   }
 }
 
 export interface IChannel {
-  kind: string
-  etag: string
-  id: string
-  snippet: {
+  artistBio?: any
+  avatar: {
+    height: number
+    url: string
+    width: number
+  }
+  badges: {
+    text: string
+    type: string
+  }
+  banner: {
+    desktop: {
+      height: number
+      url: string
+      width: number
+    }[]
+
+    mobile: {
+      height: number
+      url: string
+      width: number
+    }[]
+
+    tv: {
+      height: number
+      url: string
+      width: number
+    }[]
+  }
+  canonicalBaseUrl: string
+  channelId: string
+  country?: any
+  description: string
+  hasBusinessEmail: boolean
+  joinedDate: string
+  joinedDateText: string
+  keywords: string[]
+  links: {
+    icon: string
+    targetUrl: string
     title: string
-    description: string
-    customUrl: string
-    publishedAt: string
-    thumbnails: {
-      high: {
-        url: string
-        width: number
-        height: number
-      }
+  }[]
+  stats: {
+    subscribers: number
+    subscribersText: string
+    videos: number
+    videosText: string
+    views: number
+  }
+  title: string
+  username: string
+}
+
+export interface ICommunity {
+  type: string
+  post: {
+    attachment: {
+      images: {
+        source: { height: number; width: number; url: string }[]
+      }[]
     }
-    defaultLanguage: string
-    localized: {
+    author: {
+      avatar: { height: number; width: number; url: string }[]
+      canonicalBaseUrl: string
+      channelId: string
       title: string
-      description: string
     }
-    country: string
-  }
-  contentDetails: {
-    relatedPlaylists: {
-      likes: string
-      favorites: string
-      uploads: string
+    postId: string
+    publishedTimeText: string
+    stats: {
+      comments: number
+      likes: number
     }
-  }
-  statistics: {
-    viewCount: number
-    subscriberCount: number // this value is rounded to three significant figures
-    hiddenSubscriberCount: boolean
-    videoCount: number
-  }
-  status: {
-    privacyStatus: string
-    isLinked: boolean
-    longUploadsStatus: string
-    madeForKids: boolean
-    selfDeclaredMadeForKids: boolean
-  }
-  brandingSettings: {
-    channel: {
-      title: string
-      description: string
-      keywords: string
-      trackingAnalyticsAccountId: string
-      moderateComments: boolean
-      unsubscribedTrailer: string
-      defaultLanguage: string
-      country: string
-    }
-    watch: {
-      textColor: string
-      backgroundColor: string
-      featuredPlaylistId: string
-    }
-  }
-  auditDetails: {
-    overallGoodStanding: boolean
-    communityGuidelinesGoodStanding: boolean
-    copyrightStrikesGoodStanding: boolean
-    contentIdClaimsGoodStanding: boolean
-  }
-  contentOwnerDetails: {
-    contentOwner: string
-    timeLinked: string
+    text: string
   }
 }

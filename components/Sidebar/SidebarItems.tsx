@@ -19,7 +19,7 @@ const SidebarItems = ({ startIcon, title }: SidebarItemsProps) => {
         textTransform: "capitalize"
       }}
     >
-      {title}
+      <p style={{ marginLeft: "10px" }}>{title}</p>
     </Button>
   )
 }

@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/system"
+import { Stack } from "@mui/system"
 import React from "react"
 import { IVideos } from "@/types"
 import VideoCard from "./VideoCard"
@@ -18,10 +18,13 @@ const Videos = ({ videos }: VideosProps) => {
       justifyContent="start"
       alignItems="start"
       gap={2}
+      sx={{ pt: 2, pr: 2 }}
     >
-      {videos.map((item, index) => (
-        <VideoCard key={index} video={item as IVideos} />
-      ))}
+      {videos
+        .filter(item => item.type === "video")
+        .map((item, index) => (
+          <VideoCard key={index} video={item as IVideos} />
+        ))}
     </Stack>
   )
 }

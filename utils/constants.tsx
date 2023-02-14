@@ -1,39 +1,39 @@
 import {
-  Home,
-  Bolt,
-  Subscriptions,
-  VideoLibrary,
-  History,
   YouTube,
-  Schedule,
   ThumbUpOutlined,
-  KeyboardArrowDown,
-  Whatshot,
-  MusicNote,
-  SportsEsports,
-  Newspaper,
-  EmojiEvents
+  HomeOutlined,
+  BoltOutlined,
+  SubscriptionsOutlined,
+  VideoLibraryOutlined,
+  HistoryOutlined,
+  ScheduleOutlined,
+  KeyboardArrowDownOutlined,
+  WhatshotOutlined,
+  MusicNoteOutlined,
+  SportsEsportsOutlined,
+  NewspaperOutlined,
+  EmojiEventsOutlined
 } from "@mui/icons-material"
 
 export const sidebarItemsHeader = [
-  { icon: <Home />, title: "Home" },
-  { icon: <Bolt />, title: "Shorts" },
-  { icon: <Subscriptions />, title: "Subscriptions" }
+  { icon: <HomeOutlined />, title: "Home" },
+  { icon: <BoltOutlined />, title: "Shorts" },
+  { icon: <SubscriptionsOutlined />, title: "Subscriptions" }
 ]
 
 export const sidebarItemsBody = [
-  { icon: <VideoLibrary />, title: "Library" },
-  { icon: <History />, title: "History" },
+  { icon: <VideoLibraryOutlined />, title: "Library" },
+  { icon: <HistoryOutlined />, title: "History" },
   { icon: <YouTube />, title: "Your videos" },
-  { icon: <Schedule />, title: "Watch later" },
+  { icon: <ScheduleOutlined />, title: "Watch later" },
   { icon: <ThumbUpOutlined />, title: "Liked videos" },
-  { icon: <KeyboardArrowDown />, title: "Show more" }
+  { icon: <KeyboardArrowDownOutlined />, title: "Show more" }
 ]
 
 export const sidebarItemsExplore = [
-  { icon: <Whatshot />, title: "Trending" },
-  { icon: <MusicNote />, title: "Music" },
-  { icon: <SportsEsports />, title: "Gaming" },
-  { icon: <Newspaper />, title: "News" },
-  { icon: <EmojiEvents />, title: "Sports" }
+  { icon: <WhatshotOutlined />, title: "Trending" },
+  { icon: <MusicNoteOutlined />, title: "Music" },
+  { icon: <SportsEsportsOutlined />, title: "Gaming" },
+  { icon: <NewspaperOutlined />, title: "News" },
+  { icon: <EmojiEventsOutlined />, title: "Sports" }
 ]

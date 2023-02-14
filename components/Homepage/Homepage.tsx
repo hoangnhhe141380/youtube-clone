@@ -12,15 +12,14 @@ const Homepage = () => {
     setVideos([])
 
     youtubeApi
-      .get("/search", {
+      .get("/search/", {
         params: {
-          part: "snippet",
-          q: ""
+          q: "vietnam music"
         }
       })
       .then(response => {
-        setVideos(response.data.items)
-        console.log(response.data)
+        setVideos(response.data.contents)
+        console.log(response.data.contents)
       })
   }, [])
 
@@ -28,15 +27,15 @@ const Homepage = () => {
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
         sx={{
+          width: "15%",
           height: { sx: "auto", md: "92vh" },
-          borderRight: "1px solid #3d3d3d",
           px: { sx: 0, md: 2 }
         }}
       >
         <Sidebar />
       </Box>
 
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh" }}>
+      <Box sx={{ overflowY: "auto", width: "85%", height: "90vh" }}>
         <Videos videos={videos} />
       </Box>
     </Stack>
