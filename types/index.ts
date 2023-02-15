@@ -33,7 +33,7 @@ export interface IChannel {
     height: number
     url: string
     width: number
-  }
+  }[]
   badges: {
     text: string
     type: string
@@ -103,4 +103,45 @@ export interface ICommunity {
     }
     text: string
   }
+}
+
+export interface IWatch {
+  author: {
+    avatar: { height: number; width: number; url: string }[]
+    canonicalBaseUrl: string
+    channelId: string
+    title: string
+    badges: unknown[]
+  }
+  captions: unknown[]
+  cards: unknown[]
+  category: string
+  chapters: unknown[]
+  description: string
+  endSreen: {
+    items: unknown[]
+  }
+  isLiveContent: boolean
+  isLiveNow: boolean
+  keywords: string[]
+  lengthSeconds: number
+  musics: {
+    attributes: {
+      album: string
+      artist: string
+      licenses: string
+    }
+    title: string
+    videoId: string
+  }[]
+  publishedDate: string
+  stats: {
+    comments: number
+    likes: number
+    views: number
+  }
+  superTitle: { items: string[] }
+  thumbnails: { height: number; width: number; url: string }[]
+  title: string
+  videoId: string
 }

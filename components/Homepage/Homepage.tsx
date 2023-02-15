@@ -14,7 +14,7 @@ const Homepage = () => {
     youtubeApi
       .get("/search/", {
         params: {
-          q: "vietnam music"
+          q: "nhac viet"
         }
       })
       .then(response => {

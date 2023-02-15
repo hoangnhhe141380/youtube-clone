@@ -16,9 +16,13 @@ const VideoCard = ({ video }: { video: IVideos }) => {
         paddingBottom: "30px"
       }}
     >
-      <Link href={`/watch/${video.video.videoId}`}>
+      <Link
+        href={`/watch/${video.video.author?.channelId}/${video.video.videoId}`}
+      >
         <CardMedia
-          image={video.video.thumbnails[0]?.url}
+          image={
+            video.video.thumbnails?.[video.video.thumbnails.length - 1]?.url
+          }
           sx={{
             width: { xs: "100%", sm: "320px" },
             height: 180,
@@ -50,10 +54,12 @@ const VideoCard = ({ video }: { video: IVideos }) => {
       >
         <Box sx={{ display: "flex", flexDirection: "row", gap: 1 }}>
           <Link href={`/channel/${video.video?.author?.channelId}`}>
-            <Avatar
-              src={video.video?.author?.avatar[0]?.url}
-              alt={video.video?.author?.title}
-            />
+            {video.video?.author?.avatar && (
+              <Avatar
+                src={video.video?.author?.avatar[0]?.url}
+                alt={video.video?.author?.title}
+              />
+            )}
           </Link>
           <Box
             sx={{
@@ -61,7 +67,9 @@ const VideoCard = ({ video }: { video: IVideos }) => {
               flexDirection: "column"
             }}
           >
-            <Link href={`/watch/${video.video.videoId}`}>
+            <Link
+              href={`/watch/${video.video.author?.channelId}/${video.video.videoId}`}
+            >
               <Typography
                 variant="body1"
                 fontWeight="bold"

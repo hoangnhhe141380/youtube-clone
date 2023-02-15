@@ -90,7 +90,7 @@ const ShortsChannel = () => {
               }}
             >
               <Avatar
-                src={channelDetail?.avatar?.url}
+                src={channelDetail?.avatar[0]?.url}
                 alt={channelDetail?.title}
                 sx={{ width: "80px", height: "80px", my: 3, ml: 6 }}
               />
@@ -202,7 +202,13 @@ const ShortsChannel = () => {
             </Tabs>
           </Box>
 
-          <Box p={2} display="flex" flexDirection={'column'} gap={2} px={'100px'}>
+          <Box
+            p={2}
+            display="flex"
+            flexDirection={"column"}
+            gap={2}
+            px={"100px"}
+          >
             {communities.map((item, index) => (
               <Community
                 channelDetail={channelDetail}

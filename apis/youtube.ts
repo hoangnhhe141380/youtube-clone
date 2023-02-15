@@ -9,7 +9,7 @@ export default axios.create({
     gl: "US"
   },
   headers: {
-    "X-RapidAPI-Key": "4e89ef9fa2msh46ab1921755c2c3p162ef5jsnfe03be051907",
+    "X-RapidAPI-Key": "08709733dbmsh018e1c0c152a96dp15b53cjsn7a2ff77e58fa",
     "X-RapidAPI-Host": "youtube138.p.rapidapi.com"
   }
 })

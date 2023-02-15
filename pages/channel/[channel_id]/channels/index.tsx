@@ -10,16 +10,18 @@ import {
   Tabs,
   Typography
 } from "@mui/material"
-import Videos from "@/components/Videos"
 import { IChannel, IVideos } from "@/types"
 import DefaultLayout from "@/layout/DefaultLayout"
 import Sidebar from "@/components/Sidebar"
 import { CheckCircle } from "@mui/icons-material"
+import About from "@/components/Channel/About"
+import Link from "next/link"
+import Channel from "@/components/Channel/Channel"
 
-const Channel = () => {
-  const [videos, setVideos] = useState<IVideos[]>([])
+const ChannelsChannel = () => {
   const [channelDetail, setChannelDetail] = useState<IChannel>()
-  const [tab, setTab] = useState<number>(0)
+  const [channels, setChannels] = useState([])
+  const [tab, setTab] = useState<number>(6)
 
   const route = useRouter()
   const id = route.query.channel_id
@@ -32,19 +34,17 @@ const Channel = () => {
         }
       })
       .then(response => {
-        console.log(response.data)
         setChannelDetail(response.data)
       })
 
     youtubeApi
-      .get("/channel/videos/", {
+      .get("/channel/channels/", {
         params: {
           id: id
         }
       })
       .then(response => {
-        console.log(response.data.contents)
-        setVideos(response.data.contents)
+        setChannels(response.data)
       })
   }, [id])
 
@@ -201,8 +201,8 @@ const Channel = () => {
             </Tabs>
           </Box>
 
-          <Box p={2} display="flex">
-            <Videos videos={videos} />
+          <Box sx={{ p: 2, display: "flex", flexDirection: "row" }}>
+            <Channel />
           </Box>
         </Box>
       </Stack>
@@ -210,4 +210,4 @@ const Channel = () => {
   )
 }
 
-export default Channel
+export default ChannelsChannel

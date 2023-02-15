@@ -89,7 +89,7 @@ const ShortsChannel = () => {
               }}
             >
               <Avatar
-                src={channelDetail?.avatar?.url}
+                src={channelDetail?.avatar[0]?.url}
                 alt={channelDetail?.title}
                 sx={{ width: "80px", height: "80px", my: 3, ml: 6 }}
               />
